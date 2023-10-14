@@ -4,6 +4,7 @@
 
 { config, pkgs, ... }:
 
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -94,7 +95,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-    vim
+    neovim
     wget
     curl
     i3
@@ -106,6 +107,26 @@
     nodejs
     python3
     gdb
+    radare2
+    jetbrains.jdk
+    vscode-with-extensions
+    rustup
+    qemu
+    virt-manager
+    powershell
+    httpie
+    insomnia
+    nerdfonts
+    jetbrains.idea-community
+    gnumake
+  ];
+
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    fira-code
+    fira-code-symbols
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
